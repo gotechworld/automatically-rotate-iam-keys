@@ -25,3 +25,8 @@ AWS Rotate IAM Keys is set up to automatically schedule a task for you upon the 
 Modify the `-profile` parameter from `default` to a comma-separated list of your profile names.
 
 If you move the .ps1 script from the initial location where you first ran it, you will need to modify the path in the task to point to the correct script location.
+
+
+In addition to the PowerShell script, I have been creating a `Menu list` PowerShell script to trigger info's about a specific IAM User Key.
+
+Please, parse all needed parameters into the PowerShell script before calling it. 
