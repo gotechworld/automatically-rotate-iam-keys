@@ -18,7 +18,7 @@ AWS Rotate IAM Keys is supported by all major platforms.
 
 ### Windows
 
-Download the executable PowerShell script. Simply place this in any directory and then run it. It will install the Scheduled Task to rotate your keys nightly upon the first run and will rotate your keys on each run thereafter.
+Download the executable PowerShell `script`. Simply place this in any directory and then run it. It will install the Scheduled Task to rotate your keys nightly upon the first run and will rotate your keys on each run thereafter.
 
 AWS Rotate IAM Keys is set up to automatically schedule a task for you upon the first run. If you want to edit the profiles that are being updated, you need to modify the task using [Task Scheduler](https://docs.microsoft.com/en-us/windows/win32/taskschd/task-scheduler-start-page).
 
@@ -27,6 +27,6 @@ Modify the `-profile` parameter from `default` to a comma-separated list of your
 If you move the .ps1 script from the initial location where you first ran it, you will need to modify the path in the task to point to the correct script location.
 
 
-In addition to the PowerShell script, I have been creating a `Menu list` PowerShell script to trigger info's about a specific IAM User Key.
+In addition to the PowerShell `script`, I have been creating a `Menu list` PowerShell script to trigger info's about a specific IAM User Key.
 
 Please, parse all needed parameters into the PowerShell script before calling it. 
