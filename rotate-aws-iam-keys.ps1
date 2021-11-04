@@ -18,78 +18,61 @@ Write-Host "`n"
 
 Function saveAWSCredentials {
     #Saves AWS credentials to persistent store (-StoreAs)
-	Set-AWSCredential -AccessKey XXXXXXXX -SecretKey XXXXXXXX -StoreAs DeployCloudformationAndFilesDEV
+    Set-AWSCredential -AccessKey XXXXXXXX -SecretKey XXXXXXXX -StoreAs DeployCloudformationAndFilesDEV
 }
 
 Function setDefaultAWSRegion {
     #Sets a default AWS region
-	Get-AWSRegion
-	Set-DefaultAWSRegion -Region eu-west-1 
-	Set-DefaultAWSRegion
+    Get-AWSRegion
+    Set-DefaultAWSRegion -Region eu-west-1 
+    Set-DefaultAWSRegion
 }
 
 Function listUsers {
     #Calls the AWS Identity and Access Management ListUsers
-	Get-IAMUserList -StoredCredentials DeployCloudformationAndFilesDEV
+    Get-IAMUserList -StoredCredentials DeployCloudformationAndFilesDEV
 }
 
 Function listUserAccessKey {
     #Calls the AWS Identity and Access Management ListAccessKeys
-	Get-IAMAccessKey -UserName "DeployCloudformationAndFiles" -StoredCredentials DeployCloudformationAndFilesDEV
+    Get-IAMAccessKey -UserName "DeployCloudformationAndFiles" -StoredCredentials DeployCloudformationAndFilesDEV
 }
 
 
 
 Function changeIAMAccessKeyStatus {
     #Calls the AWS Identity and Access Management UpdateAccessKey
-	Update-IAMAccessKey -UserName "DeployCloudformationAndFiles" -AccessKeyId XXXXXXXX -Status Inactive
+    Update-IAMAccessKey -UserName "DeployCloudformationAndFiles" -AccessKeyId XXXXXXXX -Status Inactive
 }
 
 
 Function removeOldIAMAccessKey {
     #Calls the AWS Identity and Access Management DeleteAccessKey
-	Remove-IAMAccessKey -AccessKeyId XXXXXXXX -UserName "DeployCloudformationAndFiles" -Force
+    Remove-IAMAccessKey -AccessKeyId XXXXXXXX -UserName "DeployCloudformationAndFiles" -Force
 }
 
 Function newIAMAccessKey {
     #Calls the AWS Identity and Access Management NewAccessKey
-	New-IAMAccessKey -UserName "DeployCloudformationAndFiles" -StoredCredentials DeployCloudformationAndFilesDEV
+    New-IAMAccessKey -UserName "DeployCloudformationAndFiles" -StoredCredentials DeployCloudformationAndFilesDEV
 }
 
 Function quit {
     #Exit
-	exit
+    exit
 }
 
 do {
     Write-Host "Trigger IAM User Key details :
 
     1. Saves AWS credentials to persistent store (-StoreAs)
-    2. Sets a default AWS region
+    2. Sets a Default AWS region
     3. Calls the AWS Identity and Access Management ListUsers
     4. Calls the AWS Identity and Access Management ListAccessKeys
     5. Calls the AWS Identity and Access Management UpdateAccessKey
     6. Calls the AWS Identity and Access Management DeleteAccessKey
     7. Calls the AWS Identity and Access Management NewAccessKey
     q. Quit" -Foreground Magenta
-
-    Write-Host "`n"
-
-    While (($Selection = Read-Host -Prompt 'Please select an option') -notin 1,2,3,4,5,6,7,'q') 
-    { 
-        Write-Warning "$Selection is not a valid option" -Foreground Red
-    } 
-
-    Switch ($Selection) {
-        1 { saveAWSCredentials }
-        2 { setDefaultAWSRegion }
-        3 { listUsers }
-        4 { listUserAccessKey }
-        5 { changeIAMAccessKeyStatus }
-        6 { removeOldIAMAccessKey }
-	7 { newIAMAccessKey }
-        q { quit }
-    }
+    
 } until ($Selection -eq 'q')
 
 
