@@ -25,7 +25,7 @@ Function setDefaultAWSRegion {
     #Sets a default AWS region
     Get-AWSRegion
     Set-DefaultAWSRegion -Region eu-west-1 
-    Set-DefaultAWSRegion
+    Get-DefaultAWSRegion
 }
 
 Function listUsers {
@@ -37,8 +37,6 @@ Function listUserAccessKey {
     #Calls the AWS Identity and Access Management ListAccessKeys
     Get-IAMAccessKey -UserName "DeployCloudformationAndFiles" -StoredCredentials DeployCloudformationAndFilesDEV
 }
-
-
 
 Function changeIAMAccessKeyStatus {
     #Calls the AWS Identity and Access Management UpdateAccessKey
