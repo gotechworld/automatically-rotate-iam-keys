@@ -87,7 +87,7 @@ do {
         4 { listUserAccessKey }
         5 { changeIAMAccessKeyStatus }
         6 { removeOldIAMAccessKey }
-		7 { newIAMAccessKey }
+	7 { newIAMAccessKey }
         q { quit }
     }
 } until ($Selection -eq 'q')
@@ -95,6 +95,6 @@ do {
 
 Write-Host "`n `n"
 Write-Host "****************************************************************************************************************" -ForegroundColor Green
-Write-Host "***         PLEASE PROCEED EXACTLY THE SAME way WITH THE LEGOID-QA and LEGOID-OPS-PROD environments!!!       ***" -ForegroundColor Green
+Write-Host "***         PLEASE PROCEED EXACTLY THE SAME WAY WITH THE LEGOID-QA and LEGOID-OPS-PROD environments!!!       ***" -ForegroundColor Green
 Write-Host "****************************************************************************************************************" -ForegroundColor Green
 Write-Host "`n `n"
