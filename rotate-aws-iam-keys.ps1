@@ -87,7 +87,7 @@ do {
         4 { listUserAccessKey }
         5 { changeIAMAccessKeyStatus }
         6 { removeOldIAMAccessKey }
-	7 { newIAMAccessKey }
+		7 { newIAMAccessKey }
         q { quit }
     }
 } until ($Selection -eq 'q')
