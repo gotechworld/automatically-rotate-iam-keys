@@ -70,7 +70,7 @@ do {
     4. Calls the AWS Identity and Access Management ListAccessKeys
     5. Calls the AWS Identity and Access Management UpdateAccessKey
     6. Calls the AWS Identity and Access Management DeleteAccessKey
-	7. Calls the AWS Identity and Access Management NewAccessKey
+    7. Calls the AWS Identity and Access Management NewAccessKey
     q. Quit" -Foreground Magenta
 
     Write-Host "`n"
@@ -87,7 +87,7 @@ do {
         4 { listUserAccessKey }
         5 { changeIAMAccessKeyStatus }
         6 { removeOldIAMAccessKey }
-		7 { newIAMAccessKey }
+	7 { newIAMAccessKey }
         q { quit }
     }
 } until ($Selection -eq 'q')
