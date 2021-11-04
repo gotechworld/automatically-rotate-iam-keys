@@ -19,5 +19,4 @@ AWS Rotate IAM Keys is supported by all major platforms.
 ### Windows
 
 Download the executable PowerShell [script](https://github.com/petrugiurca/automatically-rotate-iam-keys/blob/main/rotate-aws-iam-keys.ps1). Simply place this in any directory and then run it. 
-
 Please, parse all needed parameters into the PowerShell script before calling it.
