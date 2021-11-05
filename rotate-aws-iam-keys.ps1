@@ -51,7 +51,7 @@ Function removeOldIAMAccessKey {
 
 Function newIAMAccessKey {
     #Calls the AWS Identity and Access Management NewAccessKey
-    New-IAMAccessKey -UserName "DeployCloudformationAndFiles" -StoredCredentials DeployCloudformationAndFilesDEV
+    New-IAMAccessKey -UserName "DeployCloudformationAndFiles" -StoredCredentials DeployCloudformationAndFilesDEV | Export-Csv -Path "C:\secrets.csv"
 }
 
 Function quit {
