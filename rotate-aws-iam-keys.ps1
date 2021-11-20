@@ -71,6 +71,24 @@ do {
     7. Calls the AWS Identity and Access Management NewAccessKey
     q. Quit" -Foreground Magenta
     
+	Write-Host "`n"
+
+    While (($Selection = Read-Host -Prompt 'Please select an option') -notin 1,2,3,4,5,6,7,'q') 
+    { 
+        Write-Warning "$Selection is not a valid option" -Foreground Red
+    } 
+
+    Switch ($Selection) {
+        1 { saveAWSCredentials }
+        2 { setDefaultAWSRegion }
+        3 { listUsers }
+        4 { listUserAccessKey }
+        5 { changeIAMAccessKeyStatus }
+        6 { removeOldIAMAccessKey }
+		7 { newIAMAccessKey }
+        q { quit }
+    }
+	
 } until ($Selection -eq 'q')
 
 
