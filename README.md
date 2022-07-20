@@ -1,3 +1,5 @@
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=petrugiurca_automatically-rotate-iam-keys&metric=alert_status&token=878e10f29c28fc0b2b0ce079f2bae686866d5b53)](https://sonarcloud.io/summary/new_code?id=petrugiurca_automatically-rotate-iam-keys)
+
 ## AWS-Rotate-IAM-Keys
 
 Rotate our IAM Keys to be in compliance with security best practices. AWS talks about rotating our keys every 30, 45, or 90 days. 
